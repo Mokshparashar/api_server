@@ -21,7 +21,7 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.send("<h1>Hello From Server...</h1>");
+  res.send("<h1>Hello From API Server...</h1>");
 });
 
 app.get("/api/tasks", (req, res) => {
