@@ -5,12 +5,11 @@ const app = express();
 import morgan from "morgan";
 
 let taskList = [
-  { id: nanoid(), type: "name", placeholder: "Enter your name" },
-  { id: nanoid(), type: "email", placeholder: "Enter your Email" },
-  { id: nanoid(), type: "number", placeholder: "Mobile number" },
-  { id: nanoid(), type: "text", placeholder: "Enter your address" },
-  { id: nanoid(), type: "date", placeholder: "Enter your address" },
-  { id: nanoid(), type: "time", placeholder: "Enter your address" },
+  { id: nanoid(), type: "name", placeholder: "First name" },
+  { id: nanoid(), type: "name", placeholder: "Second name" },
+  { id: nanoid(), type: "email", placeholder: "Your Email" },
+  { id: nanoid(), type: "number", placeholder: "Your Mobile number" },
+  { id: nanoid(), type: "text", placeholder: "Your address" },
 ];
 
 if (process.env.NODE_ENV !== "production") {
