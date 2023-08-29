@@ -5,21 +5,61 @@ const app = express();
 import morgan from "morgan";
 
 let taskList = [
-  { id: nanoid(), type: "text", name: "first name", placeholder: "First name" },
   {
     id: nanoid(),
+
     type: "text",
-    name: "second name",
+    name: "first_name",
+    placeholder: "First name",
+  },
+  {
+    id: nanoid(),
+
+    type: "text",
+    name: "second_name",
     placeholder: "Second name",
   },
-  { id: nanoid(), type: "email", name: "email", placeholder: "Your Email" },
   {
     id: nanoid(),
+
+    type: "email",
+    name: "email",
+    placeholder: "Your Email",
+  },
+  {
+    id: nanoid(),
+
     type: "number",
     name: "number",
     placeholder: "Your Mobile number",
   },
-  { id: nanoid(), type: "text", name: "address", placeholder: "Your address" },
+  {
+    id: nanoid(),
+
+    type: "text",
+    name: "address",
+    placeholder: "Your address",
+  },
+];
+
+let taskList_2 = [
+  {
+    id: nanoid(),
+    tag: "select",
+    name: "country",
+    options: [
+      { id: nanoid(), country: "--SELECT YOUR COUNTRY--" },
+      { id: nanoid(), country: "USA" },
+      { id: nanoid(), country: "India" },
+      { id: nanoid(), country: "Russia" },
+      { id: nanoid(), country: "China" },
+      { id: nanoid(), country: "Japan" },
+      { id: nanoid(), country: "UK" },
+      { id: nanoid(), country: "France" },
+      { id: nanoid(), country: "Saudi arabia" },
+      { id: nanoid(), country: "UAE" },
+    ],
+  },
 ];
 
 if (process.env.NODE_ENV !== "production") {
@@ -35,6 +75,9 @@ app.get("/", (req, res) => {
 
 app.get("/api/tasks", (req, res) => {
   res.json({ taskList });
+});
+app.get("/api/tasks2", (req, res) => {
+  res.json({ taskList_2 });
 });
 
 app.post("/api/tasks", (req, res) => {
